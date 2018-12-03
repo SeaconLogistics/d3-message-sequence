@@ -70,12 +70,12 @@
         }
 
         delay_add([
-          {from: "bj", to: "usb", msg: "New Booking"},
-          {from: "usb", to: "usb", msg: "Find and pre-book first available slot"},
-          {from: "usb", to: "carrier", msg: "please confirm slot"},
-          {from: "carrier", to: "usb", msg: "slot confirmation"},
-          {from: "usb", to: "usb", msg: "slot confirmed"},
-          {from: "usb", to: "bj", msg: "add track and trace record"},
+          {from: "Blue Jay", to: "Universal Slot Booking", msg: "New Booking"},
+          {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "Find and pre-book first available slot"},
+          {from: "Universal Slot Booking", to: "carrier", msg: "please confirm slot"},
+          {from: "carrier", to: "Universal Slot Booking", msg: "slot confirmation"},
+          {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "slot confirmed"},
+          {from: "Universal Slot Booking", to: "Blue Jay", msg: "add track and trace record"},
           // {from: "customer", to: "barrista1", msg: "pay order"},
           // {from: "barrista2", to: "barrista2", msg: "get chai mix"},
           // {from: "barrista2", to: "barrista2", msg: "add flavor"},

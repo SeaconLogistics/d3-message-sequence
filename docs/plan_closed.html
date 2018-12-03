@@ -46,7 +46,7 @@
   <body>
 
     <body>
-      <h1>M3 Universal Slot booking Carrier ignores confirmation</h1>
+      <h1>M3 Universal Slot booking Planning Closed</h1>
       <a class="btn btn-primary" href="index.html" role="button">Back</a></p>
 
 
@@ -70,14 +70,10 @@
         }
 
         delay_add([
-          {from: "Blue Jay", to: "Universal Slot Booking", msg: "New Booking"},
-          {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "Find and pre-book first available slot"},
-          {from: "Universal Slot Booking", to: "carrier", msg: "please confirm slot"},
           {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "Planning cutoff time reached"},
-          {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "mark slot unconfirmed after cutoff time"},
-          {from: "Universal Slot Booking", to: "Control Tower", msg: "inform control tower 'Unconfirmed slot warning'"},
-          {from: "Universal Slot Booking", to: "carrier", msg: "please confirm slot, this is your last warning"},
-
+          {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "cleanup cancel all unconfirmed bookings"},
+          {from: "Universal Slot Booking", to: "Blue Jay", msg: "add track and trace records to unconfirmed bookings"},
+          {from: "Universal Slot Booking", to: "Logistics service provider", msg: "send next-day planning overview"},
           // {from: "customer", to: "barrista1", msg: "pay order"},
           // {from: "barrista2", to: "barrista2", msg: "get chai mix"},
           // {from: "barrista2", to: "barrista2", msg: "add flavor"},
