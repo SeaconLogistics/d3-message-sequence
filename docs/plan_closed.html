@@ -15,51 +15,55 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="app-body">      
+    <main class="main">
 
-  <body>
-    <h1>M3 Universal Slot booking Planning Closed</h1>
-    <a class="btn btn-primary" href="index.html" role="button">Back</a></p>
+      <body>
+        <h1>M3 Universal Slot booking Planning Closed</h1>
+        <a class="btn btn-primary" href="index.html" role="button">Back</a></p>
 
 
-    <div id="kaiflow"></div>
+        <div id="kaiflow"></div>
 
-    <script>
-      var msg_seq = d3.messageSequence().fade(0);
+        <script>
+          var msg_seq = d3.messageSequence().fade(0);
 
-      d3.select('#kaiflow')
-      .append("svg")
-      .attr("width", "100%")
-      .attr("height", "100%")
-      .call(msg_seq)
+          d3.select('#kaiflow')
+          .append("svg")
+          .attr("width", "100%")
+          .attr("height", "100%")
+          .call(msg_seq)
 
-      function delay_add(messages) {
-        var msg = messages.shift();
-        if (msg) {
-          msg_seq.addMessage(msg);
-          setTimeout(function() { delay_add(messages)}, 500);
-        }
-      }
+          function delay_add(messages) {
+            var msg = messages.shift();
+            if (msg) {
+              msg_seq.addMessage(msg);
+              setTimeout(function() { delay_add(messages)}, 500);
+            }
+          }
 
-      delay_add([
-        {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "Planning cutoff time reached"},
-        {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "cleanup cancel all unconfirmed bookings"},
-        {from: "Universal Slot Booking", to: "Blue Jay", msg: "add track and trace records to unconfirmed bookings"},
-        {from: "Universal Slot Booking", to: "Logistics service provider", msg: "send next-day planning overview"},
-        // {from: "customer", to: "barrista1", msg: "pay order"},
-        // {from: "barrista2", to: "barrista2", msg: "get chai mix"},
-        // {from: "barrista2", to: "barrista2", msg: "add flavor"},
-        // {from: "barrista2", to: "barrista2", msg: "add milk"},
-        // {from: "barrista2", to: "barrista2", msg: "add ice"},
-        // {from: "barrista2", to: "barrista2", msg: "swirl"},
-        // {from: "barrista2", to: "customer", msg: "give tasty beverage"},
-        // {from: "customer", to: "tasty beverage", msg: "sip"},
-        // {from: "tasty beverage", to: "customer", msg: "burn"},
-        // {from: "customer", to: "customer", msg: "cry"},
-        // {from: "customer", to: "manager", msg: "complain"},
-        // {from: "manager", to: "barrista1", msg: "fire"},
-        // {from: "manager", to: "barrista2", msg: "fire"},
-      ])
+          delay_add([
+            {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "Planning cutoff time reached"},
+            {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "cleanup cancel all unconfirmed bookings"},
+            {from: "Universal Slot Booking", to: "Blue Jay", msg: "add track and trace records to unconfirmed bookings"},
+            {from: "Universal Slot Booking", to: "Logistics service provider", msg: "send next-day planning overview"},
+            // {from: "customer", to: "barrista1", msg: "pay order"},
+            // {from: "barrista2", to: "barrista2", msg: "get chai mix"},
+            // {from: "barrista2", to: "barrista2", msg: "add flavor"},
+            // {from: "barrista2", to: "barrista2", msg: "add milk"},
+            // {from: "barrista2", to: "barrista2", msg: "add ice"},
+            // {from: "barrista2", to: "barrista2", msg: "swirl"},
+            // {from: "barrista2", to: "customer", msg: "give tasty beverage"},
+            // {from: "customer", to: "tasty beverage", msg: "sip"},
+            // {from: "tasty beverage", to: "customer", msg: "burn"},
+            // {from: "customer", to: "customer", msg: "cry"},
+            // {from: "customer", to: "manager", msg: "complain"},
+            // {from: "manager", to: "barrista1", msg: "fire"},
+            // {from: "manager", to: "barrista2", msg: "fire"},
+          ])
 
-      </script>
+          </script>
+        </main>
+      </div>
     </body>
     </html>
