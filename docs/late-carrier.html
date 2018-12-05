@@ -19,7 +19,7 @@
     <main class="main">
 
       <body>
-        <h1>M3 Universal Slot booking Carrier ignores confirmation</h1>
+        <h1>Carrier Disturbance</h1>
         <a class="btn btn-primary" href="index.html" role="button">Back</a></p>
 
 
@@ -43,19 +43,14 @@
           }
 
           delay_add([
-            {from: "Blue Jay", to: "Universal Slot Booking", msg: "New Booking"},
-            {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "Find and pre-book first available slot"},            
-            {from: "Universal Slot Booking", to: "Carrier", msg: "please confirm slot"},
-            {from: "Carrier", to: "Carrier", msg: "ignore mail"},
-            {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "Latest booking-confirm time is nearing (1 hour?)"},
-            {from: "Universal Slot Booking", to: "Blue Jay", msg: "add track and trace records 'late unconfirmed booking'"},
-            {from: "Universal Slot Booking", to: "Carrier", msg: "please confirm slot, this is your last warning"},
-            {from: "Blue Jay", to: "Control Tower", msg: "inform control tower 'Unconfirmed slot warning (dashboard)'"},
-            {from: "Carrier", to: "Carrier", msg: "ignore mail"},
-            {from: "Universal Slot Booking", to: "Universal Slot Booking", msg: "mark slot unconfirmed after cutoff time"},
-            {from: "Universal Slot Booking", to: "Blue Jay", msg: "add track and trace records to unconfirmed bookings"},
-            {from: "Blue Jay", to: "Control Tower", msg: "inform control tower 'No Response Carrier' (Dashboard)"},
-            {from: "Blue Jay", to: "Universal Slot Booking", msg: "re-book shipment???"},
+            {from: "Carrier", to: "Control Tower", msg: "I'll be 1 hour late, traffic sucks"},
+            {from: "Control Tower", to: "Blu Jay", msg: "open closed planning for today and click on booking"},
+            {from: "Control Tower", to: "Blu Jay", msg: "add Delayed track and trace record"},
+            {from: "Control Tower", to: "Logistics Service Provider", msg: "Phonecall to LSP 'we see that slot 5pm was free in the closed planning, may we use that for carrier x?'"},
+            {from: "Control Tower", to: "Blu Jay", msg: "add new slot to dossier"},
+            {from: "Blu Jay", to: "Logistics Service Provider", msg: "closed planning override email"},
+            
+            {from: "Blu Jay", to: "Carrier", msg: "New Slot time and dock email"},
 
             // {from: "customer", to: "barrista1", msg: "pay order"},
             // {from: "barrista2", to: "barrista2", msg: "get chai mix"},
